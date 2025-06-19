@@ -19,6 +19,7 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   color: var(--blanco);
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -28,6 +29,7 @@ body {
 .main {
   width: 100%;
   max-width: 1400px;
+  max-height: 100vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;
