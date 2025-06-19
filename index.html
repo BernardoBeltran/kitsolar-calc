@@ -9,13 +9,19 @@
 </head>
 
 <body>
+   
     <div class="main">
 
         <div class="card-inicio">
 
-            <h1>Calculadora Kit Solar</h1>
-            <p>Sinergy Soluciones Integrales S.A.S</p>
+            <div class="titulo-card">
+                <h1>Calculadora Kit Solar</h1>
 
+                    <img src="./assets/logo-sinergy-solar-transparente.png" alt="Logo Sinergy Soluciones Integrales S.A.S">
+                
+                <p>Soluciones de energía fotovoltaica</p>
+            </div>
+            
             <form id="formulario" class="formulario">
                 <label for="consumo_mensual">
                     Consumo mensual (kWh)
@@ -29,37 +35,37 @@
 
         <div class="resultado" id="resultado">
 
-            <div id="resultdo-item">
+            <div id="resultado-item">
                 <h4>Consumo mensual (kWh)</h4>
                 <p id="consumo_mensual_res">0</p>
             </div>
 
-            <div id="resultado-item">
+            <div id="resultado-item" style="display:none;">
                 <h4>Consumo mensual ajustado (+20%)</h4>
                 <p id="consumo_mensual_ajustado_res">0</p>
             </div>
 
-            <div id="resultado-item">
+            <div id="resultado-item" style="display:none;">
                 <h4>Consumo diario ajustado (kWh)</h4>
                 <p id="consumo_diario_ajustado_res">0</p>
             </div>
 
-            <div id="resultado-item">
+            <div id="resultado-item" style="display:none;">
                 <h4>Hora sol pico (HSP)</h4>
                 <p id="hora_sol_pico_res">4.5</p>
             </div>
 
-            <div id="resultado-item">
+            <div id="resultado-item" style="display:none;">
                 <h4>Potencia por panel (W)</h4>
                 <p id="potencia_por_panel_res">585</p>
             </div>
 
-            <div id="resultado-item">
+            <div id="resultado-item" style="display:none;">
                 <h4>Eficiencia del sistema</h4>
                 <p id="eficiencia__del_sistema_res">0.8</p>
             </div>
 
-            <div id="resultado-item">
+            <div id="resultado-item" style="display:none;">
                 <h4>Energía diaria generada por panel (kWh)</h4>
                 <p id="energia_diaria_generada_por_panel_res">0</p>
             </div>
@@ -75,27 +81,40 @@
             </div>
 
             <div id="resultado-item">
-                <h4>Area estimada requerida (m^2)</h4>
+                <h4>Area estimada requerida (m&sup2)</h4>
                 <p id="area_estimada_requerida_res">0</p>
             </div>
 
-            <div id="resultado-item">
+            <div id="resultado-item" class="resultado-item" style="display:none;">
                 <h4>Autonomía de baterías</h4>
                 <p id=autonomia_de_baterias_res">1 día</p>
             </div>
 
-            <div id="resultado-item">
+            <div id="resultado-item" style="display:none;">
                 <h4>Capacidad total de baterías requerida (kWh)</h4>
                 <p id="capacidad_total_de_baterias_requerida_res">0</p>
             </div>
-
+            
             <h2>Kit recomendado: <span id="kit_adecuado">?</span></h2>
-            <button onclick="location.reload()">Regresar</button>
+            <button onclick="mostrarItemsOcultos()">💡 Ver detalles</button>
+            <button onclick="location.reload()">⟳ Nuevo consumo</button>
         </div>
 
     </div>
 
+    
+
     <script src="./src/kit2.js"></script>
+
+    <script>
+        function mostrarItemsOcultos() {
+            console.log("Mostrando items ocultos");
+            const $itemsOcultos = document.querySelectorAll("#resultado-item[style*='display: none']");
+            $itemsOcultos.forEach(item => {
+                item.style.display = 'block'
+            })
+        }
+    </script>
 </body>
 
 </html>
