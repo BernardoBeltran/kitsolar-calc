@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Kit Solar - Sinergy</title>
+    <link rel="stylesheet" href="./src/styles2.css">
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="card-inicio">
+
+            <h1>Calculadora Kit Solar</h1>
+            <p>Sinergy Soluciones Integrales S.A.S</p>
+
+            <form id="formulario" class="formulario">
+                <label for="consumo_mensual">
+                    Consumo mensual (kWh)
+                    <input type="" id="consumo_mensual" name="consumo_mensual" required>
+                    <p id="error_text" class="error-text-oculto">¡Valor invalido!</p>
+                </label>
+                
+                <button type="submit">Calcular</button>
+            </form>
+        </div>
+
+        <div class="resultado" id="resultado">
+
+            <div id="resultdo-item">
+                <h4>Consumo mensual (kWh)</h4>
+                <p id="consumo_mensual_res">0</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Consumo mensual ajustado (+20%)</h4>
+                <p id="consumo_mensual_ajustado_res">0</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Consumo diario ajustado (kWh)</h4>
+                <p id="consumo_diario_ajustado_res">0</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Hora sol pico (HSP)</h4>
+                <p id="hora_sol_pico_res">4.5</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Potencia por panel (W)</h4>
+                <p id="potencia_por_panel_res">585</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Eficiencia del sistema</h4>
+                <p id="eficiencia__del_sistema_res">0.8</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Energía diaria generada por panel (kWh)</h4>
+                <p id="energia_diaria_generada_por_panel_res">0</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Cantidad de paneles necesarios</h4>
+                <p id="cantidad_de_paneles_necesarios_res">0</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Potencia total del sistema (kWp)</h4>
+                <p id="potencia_total_del_sistema_res">0</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Area estimada requerida (m^2)</h4>
+                <p id="area_estimada_requerida_res">0</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Autonomía de baterías</h4>
+                <p id=autonomia_de_baterias_res">1 día</p>
+            </div>
+
+            <div id="resultado-item">
+                <h4>Capacidad total de baterías requerida (kWh)</h4>
+                <p id="capacidad_total_de_baterias_requerida_res">0</p>
+            </div>
+
+            <h2>Kit adecuado: <span id="kit_adecuado">?</span></h2>
+            <button onclick="location.reload()">Regresar</button>
+        </div>
+
+    </div>
+
+    <script src="./src/kit2.js"></script>
+</body>
+
+</html>
