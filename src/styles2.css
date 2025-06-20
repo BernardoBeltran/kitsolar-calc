@@ -160,7 +160,7 @@ button:hover {
   width: 100%;
   text-align: center;
   color: var(--amarillo);
-    font-size: clamp(1rem, 2vw, 3rem);
+    font-size: clamp(1.5rem, 3vw, 3rem);
 
   font-weight: bold;
 }
