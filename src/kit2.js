@@ -89,7 +89,24 @@ $d.addEventListener("DOMContentLoaded", () => {
         $area_estimada_requerida_element.textContent = area_estimada_requerida;
         $capacidad_total_de_baterias_requerida_element.textContent = capacidad_total_de_baterias_requerida;
 
-        $kit_adecuado_element.textContent = kitAdecuado(cantidad_de_paneles_necesarios);
+        // $kit_adecuado_element.textContent = kitAdecuado(cantidad_de_paneles_necesarios);
+
+        if (cantidad_de_paneles_necesarios <= 9) {
+            $kit_adecuado_element.textContent = `Kit ${kitAdecuado(cantidad_de_paneles_necesarios)}`;
+        } else {
+            const resultado = obtenerCombinacionKits(Math.ceil(cantidad_de_paneles_necesarios));
+            if (resultado) {
+                const combinacion = Object.entries(resultado.kits)
+                    .filter(([_, cantidad]) => cantidad > 0)
+                    .map(([nombre, cantidad]) => `${cantidad} x ${nombre}`)
+                    .join(" + ");
+                $kit_adecuado_element.textContent = `${combinacion} = ${resultado.totalPaneles} paneles`;
+            } else {
+                $kit_adecuado_element.textContent = "No se encontró una combinación válida";
+            }
+        }
+
+
 
 
         // Animación de resultados
@@ -104,6 +121,43 @@ $d.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
+
+    // Solucion combinaciónd de Kits sinergy
+    const obtenerCombinacionKits = (panelesRequeridos) => {
+        const kits = [
+            { nombre: "Kit 3", paneles: 6 },
+            { nombre: "Kit 4", paneles: 8 },
+            { nombre: "Kit 5", paneles: 9 }
+        ];
+
+        const soluciones = [];
+        const maxKits = Math.ceil(panelesRequeridos / 6) + 2;
+
+        for (let k3 = 0; k3 <= maxKits; k3++) {
+            for (let k4 = 0; k4 <= maxKits; k4++) {
+                for (let k5 = 0; k5 <= maxKits; k5++) {
+                    const totalPaneles = k3 * 6 + k4 * 8 + k5 * 9;
+
+                    if (totalPaneles >= panelesRequeridos) {
+                        const totalKits = k3 + k4 + k5;
+                        soluciones.push({
+                            kits: { 'Kit 3': k3, 'Kit 4': k4, 'Kit 5': k5 },
+                            totalPaneles,
+                            totalKits
+                        });
+                    }
+                }
+            }
+        }
+
+        soluciones.sort((a, b) => {
+            if (a.totalKits !== b.totalKits) return a.totalKits - b.totalKits;
+            return a.totalPaneles - b.totalPaneles;
+        });
+
+        return soluciones.length ? soluciones[0] : null;
+    };
 
 });
 

@@ -57,12 +57,16 @@ body {
   margin-bottom: 1rem;
 }
 
+.titulo-card img {
+  text-shadow: 10px 10px 000;
+}
+
 
 
 .titulo-card h1 {
   text-shadow: #000000 5px 5px 10px;
   font-size: clamp(1.5rem, 5vw, 3rem);
-
+  
 }
 
 .card-inicio {
@@ -74,6 +78,7 @@ body {
   color: var(--amarillo);
   font-weight: bold;
   font-size: clamp(1.5rem, 2vw, 3rem);
+  text-shadow: #000000 2px 2px 10px;
 
 }
 
@@ -160,13 +165,22 @@ button:hover {
   width: 100%;
   text-align: center;
   color: var(--amarillo);
-    font-size: clamp(1.5rem, 3vw, 3rem);
-
+  font-size: clamp(1.5rem, 3vw, 3rem);
   font-weight: bold;
+    text-shadow: #000000 2px 2px 10px;
+
 }
 
 #resultado-item p {
   font-size: 1.5rem;
+  text-shadow: #000000 2px 2px 2px;
+  font-weight: bold;
+
+}
+
+#resultado-item h4 {
+  text-shadow: #646464 2px 2px 2px;
+
 }
 
 #resultado-item:hover{
@@ -179,18 +193,39 @@ button:hover {
   background-color: var(--azul-vivido);
 }
 
-.logo-sinergy-blanco {
+.resultado-logos{
   flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-inicio-logos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logo-sinergy-blanco {
   max-height: 80px;
   object-fit: contain;
-  width: 100%;
+
+}
+
+.logo-foc-resultados {
+  max-height: 80px;
+  object-fit: contain;
 }
 
 .logo-sinergy-transparente{
-  flex: 0 0 100%;
+ 
   max-height: 80px;
   object-fit: contain;
-  width: 100%;
+  
+}
+
+.logo-foc-transparente{
+  max-height: 80px;
+  object-fit: contain;
 }
 
 /* Animaciones */
@@ -236,4 +271,16 @@ button:hover {
   #resultdo-item {
     flex: 1 1 100%;
   }
+
+  .resultado-logos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.card-inicio-logos{
+  display: flex;
+  
+}
 }

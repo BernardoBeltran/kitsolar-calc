@@ -16,9 +16,10 @@
 
             <div class="titulo-card">
                 <h1>Calculadora Kit Solar</h1>
-
-                    <img src="./assets/logo-sinergy-solar-transparente.png" alt="Logo Sinergy Soluciones Integrales S.A.S" class="logo-sinergy-transparente" />
-                
+                   <div class="card-inicio-logos">
+                     <img src="./assets/logo-sinergy-solar-transparente.png" alt="Logo Sinergy Soluciones Integrales S.A.S" class="logo-sinergy-transparente" />
+                    <img src="./assets/foc-logo.png" alt="foc" class="logo-foc-transparente" />
+                   </div>
                 <p>Soluciones de energía fotovoltaica</p>
             </div>
             
@@ -35,7 +36,10 @@
 
         <div class="resultado" id="resultado">
 
-            <img src="./assets/logo-sinergy-solar_blanco.png" alt="Logo Sinergy Soluciones Integrales S.A.S" class="logo-sinergy-blanco" />
+            <div class="resultado-logos">
+                <img src="./assets/logo-sinergy-solar_blanco.png" alt="Logo Sinergy Soluciones Integrales S.A.S" class="logo-sinergy-blanco" />
+            <img src="./assets/foc-logo.png" alt="foc" class="logo-foc-resultados">
+            </div>
            
             <div id="resultado-item">
                 <h4>Consumo mensual (kWh)</h4>
@@ -97,7 +101,7 @@
                 <p id="capacidad_total_de_baterias_requerida_res">0</p>
             </div>
             
-            <h2>Kit recomendado: <span id="kit_adecuado">?</span></h2>
+            <h2>Solución: <span id="kit_adecuado">?</span></h2>
             <button onclick="mostrarItemsOcultos()" id="btn-detalles">💡 Ver detalles</button>
             <button onclick="location.reload()">⟳ Nuevo consumo</button>
         </div>
