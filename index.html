@@ -17,7 +17,7 @@
             <div class="titulo-card">
                 <h1>Calculadora Kit Solar</h1>
 
-                    <img src="./assets/logo-sinergy-solar-transparente.png" alt="Logo Sinergy Soluciones Integrales S.A.S">
+                    <img src="./assets/logo-sinergy-solar-transparente.png" alt="Logo Sinergy Soluciones Integrales S.A.S" class="logo-sinergy-transparente" />
                 
                 <p>Soluciones de energía fotovoltaica</p>
             </div>
@@ -35,6 +35,8 @@
 
         <div class="resultado" id="resultado">
 
+            <img src="./assets/logo-sinergy-solar_blanco.png" alt="Logo Sinergy Soluciones Integrales S.A.S" class="logo-sinergy-blanco" />
+           
             <div id="resultado-item">
                 <h4>Consumo mensual (kWh)</h4>
                 <p id="consumo_mensual_res">0</p>
@@ -96,7 +98,7 @@
             </div>
             
             <h2>Kit recomendado: <span id="kit_adecuado">?</span></h2>
-            <button onclick="mostrarItemsOcultos()">💡 Ver detalles</button>
+            <button onclick="mostrarItemsOcultos()" id="btn-detalles">💡 Ver detalles</button>
             <button onclick="location.reload()">⟳ Nuevo consumo</button>
         </div>
 
@@ -108,12 +110,14 @@
 
     <script>
         function mostrarItemsOcultos() {
-            console.log("Mostrando items ocultos");
             const $itemsOcultos = document.querySelectorAll("#resultado-item[style*='display: none']");
+            const $btnDetalles = document.querySelector("#btn-detalles");
             $itemsOcultos.forEach(item => {
                 item.style.display = 'block'
             })
+            $btnDetalles.style.display = 'none';
         }
+
     </script>
 </body>
 
